@@ -1,0 +1,19 @@
+apply plugin:'groovy'
+apply plugin:'eclipse'
+
+project.ext {
+    groovyVersion = '2.1.0'
+    jodaVersion = '2.1'
+
+}
+repositories{
+  mavenCentral()
+}
+
+dependencies {
+compile "joda-time:joda-time:${jodaVersion}"
+testCompile('junit:junit:4.10')
+groovy (group:'org.codehaus.groovy', name: 'groovy-all', version:"${groovyVersion}") 
+
+}
+

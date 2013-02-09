@@ -4,3 +4,8 @@
 *.jar
 *.war
 *.ear
+
+bs-groovy/.gradle
+bs-groovy/bin
+bs-groovy/build
+bs-groovy/.settings

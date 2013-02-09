@@ -1,14 +1,7 @@
 /*global document*/
 /*global jQuery*/
 /*global Option*/
-var app = {
-    START_YEAR : 1970,
-    END_YEAR : 2100,
-    DIFF_YEAR : 57,
-    MONTHS_IN_YEAR : 12,
-    AD_MAX_DAY : 31,
-    DATE_FIX_VAL : 1900
-};
+/*global app*/
 
 (function ($) {
     "use strict";
@@ -45,6 +38,13 @@ var app = {
             $("#adYear").val(yearVal);
             $("#bsYear").val(yearVal + app.DIFF_YEAR);
 
+            $("#toAd").click(function () {
+                var year = parseInt($("#bsYear").val());
+                var month = parseInt($("#bsMonth").val()) + 1;
+                var date = parseInt($("#bsDate").val());
+                var dateValue = dateCalculator.convertToAd(year, month, date);
+                $("#adResult").html(dateValue).slideDown();
+            });
         }
     );
 }(jQuery));

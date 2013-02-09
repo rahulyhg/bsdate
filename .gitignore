@@ -5,7 +5,13 @@
 *.war
 *.ear
 
+.gradle
+bs-js/bin
+bs-js/build
+.settings
+
 bs-groovy/.gradle
 bs-groovy/bin
 bs-groovy/build
 bs-groovy/.settings
+

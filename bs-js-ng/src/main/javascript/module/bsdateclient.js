@@ -53,21 +53,26 @@ function DateClient ($scope) {
     $scope.adYear = now.getYear() + 1900;
     $scope.adMonth = now.getMonth();
     $scope.adDate = now.getDate();
-
+    $scope.bsResult = '';
+    $scope.adResult = '';
     
     $scope.toAD = function() {
         var ad = bsCalculator.convertToAd($scope.bsYear, $scope.bsMonth + 1, $scope.bsDate);
         $scope.adYear = ad.year;
         $scope.adMonth = ad.month - 1;
         $scope.adDate = ad.date;
+        $scope.adResult = ad.displayValue();
     }
     
-    $scope.toBS = function() {
+    $scope.toBS = function(display) {
         var bikram = bsCalculator.convertToBikram($scope.adYear, $scope.adMonth + 1, $scope.adDate);
         $scope.bsMonth = bikram.month - 1;
         $scope.bsDate = bikram.date;
         $scope.bsYear = bikram.year;
+        if(display === undefined || display === true) {
+            $scope.bsResult = bikram.displayValue();
+        }
     }
-
-    $scope.toBS();
+    $scope.toBS(false);
+    
 }

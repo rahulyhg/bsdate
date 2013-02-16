@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>BS to AD Date Coverter</title>
+<script type="text/javascript"
+	src="javascript/imports/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="javascript/imports/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="javascript/module/console.fix.js"></script>	
+<script type="text/javascript" src="javascript/module/bsdate.js"></script>
+<script type="text/javascript" src="javascript/module/bsdate.ui.js"></script>
+
+<link href="stylesheets/bootstrap.css" type="text/css" rel="stylesheet"
+	media="all" />
+<link href="stylesheets/app.css" type="text/css" rel="stylesheet"
+media="all"/>
+</head>
+<body>
+
+	<header>
+		<div class="alert alert-info">Bikram Sambat Date Converter</div>
+	</header>
+	<div class="container">
+
+		<p>
+		Yet another Bikram Sambat (BS) converter <strong>with source</strong>. Yes, no more funny
+		business of hiding the conversion in the server side. Its all there for you to see it and download
+		it.
+		</p>
+		<div>
+		Source: https://github.com/skhatri/bsdate/blob/master/bs-js/
+		</div>
+		
+		<div class="row-fluid">
+			<div class="span12">
+
+				<div class="row-fluid">
+
+				<div class="span6">
+					<div class="alert alert-info">
+						<form class="form form-horizontal">
+							<div class="control-group">
+								<label class="control-label">Gregorian Date (AD)</label>
+								<div class="controls">
+									<select id="adYear" name="adYear" class="input-small">
+									</select> <select id="adMonth" name="adMonth" class="input-medium">
+									</select> <select id="adDate" name="adDate" class="input-mini">
+									</select>
+								</div>
+							</div>
+							<div class="controls">
+								<button type="button" id="toBs" name="toBs" class="btn btn-info">To BS</button>
+							</div>
+							<div class="control-group">
+								<p>
+									<div id="bsResult" class="alert result bsResult"><!-- dynamic --></div>
+								</p>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				<div class="span6">
+					<div class="alert alert-success">
+						<form class="form form-horizontal">
+							<div class="control-group">
+								<label class="control-label">Bikram Sambat (BS)</label>
+								<div class="controls">
+									<select id="bsYear" name="bsYear" class="input-small">
+									</select> 
+									<select id="bsMonth" name="bsMonth" class="input-medium">
+									
+									</select> <select id="bsDate" name="bsDate" class="input-mini">
+									</select>
+								</div>
+							</div>
+							<div class="controls">
+								<button type="button" id="toAd" name="toAd" class="btn btn-success">To AD</button>
+							</div>
+							<div class="control-group">
+								<p>
+								<div id="adResult" class="alert result adResult"><!-- placeholder --></div>
+								</p>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

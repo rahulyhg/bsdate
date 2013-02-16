@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app>
 
 <head>
 
@@ -7,10 +7,11 @@
 <script type="text/javascript"
 	src="javascript/imports/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="javascript/imports/bootstrap.min.js"></script>
+<script type="text/javascript" src="javascript/imports/angular.min.js"></script>
 
 <script type="text/javascript" src="javascript/module/console.fix.js"></script>	
 <script type="text/javascript" src="javascript/module/bsdate.js"></script>
-<script type="text/javascript" src="javascript/module/bsdate.ui.js"></script>
+<script type="text/javascript" src="javascript/module/bsdateclient.js"></script>
 
 <link href="stylesheets/bootstrap.css" type="text/css" rel="stylesheet"
 	media="all" />
@@ -33,7 +34,7 @@ media="all"/>
 		Source: https://github.com/skhatri/bsdate/blob/master/bs-js/
 		</div>
 		
-		<div class="row-fluid">
+		<div class="row-fluid"  ng-controller="DateClient">
 			<div class="span12">
 
 				<div class="row-fluid">
@@ -44,9 +45,12 @@ media="all"/>
 							<div class="control-group">
 								<label class="control-label">Gregorian Date (AD)</label>
 								<div class="controls">
-									<select id="adYear" name="adYear" class="input-small">
-									</select> <select id="adMonth" name="adMonth" class="input-medium">
-									</select> <select id="adDate" name="adDate" class="input-mini">
+									<select id="adYear" name="adYear" class="input-small" 
+									ng-model="adYear" ng-options="y for y in years()">
+									</select> <select id="adMonth" name="adMonth" class="input-medium"
+									ng-model="adMonth" ng-options="m for m in months()">
+									</select> <select id="adDate" name="adDate" class="input-mini"
+									ng-model="adDate" ng-options="d for d in dates()">
 									</select>
 								</div>
 							</div>
@@ -68,11 +72,14 @@ media="all"/>
 							<div class="control-group">
 								<label class="control-label">Bikram Sambat (BS)</label>
 								<div class="controls">
-									<select id="bsYear" name="bsYear" class="input-small">
+									<select id="bsYear" name="bsYear" class="input-small" ng-model="bsYear"
+									ng-options="by for by in bsYears()">
 									</select> 
-									<select id="bsMonth" name="bsMonth" class="input-medium">
-									
-									</select> <select id="bsDate" name="bsDate" class="input-mini">
+									<select id="bsMonth" name="bsMonth" class="input-medium" ng-model="bsMonth"
+									ng-options="bm for bm in bsMonths()">
+									</select> 
+									<select id="bsDate" name="bsDate" class="input-mini"
+									ng-model="bsDate" ng-options="bd for bd in bsDates()">
 									</select>
 								</div>
 							</div>

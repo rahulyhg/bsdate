@@ -59,4 +59,19 @@ function DateClient ($scope) {
     $scope.bsMonth = bikram.month - 1;
     $scope.bsDate = bikram.date;
     $scope.bsYear = bikram.year;
+    
+    $scope.toAD = function() {
+        var ad = bsCalculator.convertToAd($scope.bsYear, $scope.bsMonth + 1, $scope.bsDate);
+        $scope.adYear = ad.year;
+        $scope.adMonth = ad.month - 1;
+        $scope.adDate = ad.date;
+    }
+    
+    $scope.toBS = function() {
+        var bikram = bsCalculator.convertToBikram($scope.adYear, $scope.adMonth + 1, $scope.adDate);
+        $scope.bsMonth = bikram.month - 1;
+        $scope.bsDate = bikram.date;
+        $scope.bsYear = bikram.year;
+    }
+    
 }

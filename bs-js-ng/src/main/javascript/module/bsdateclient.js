@@ -1,8 +1,5 @@
 function DateClient ($scope) {
-    var now = new Date();
-
-    var numberOfMonths = 12;
-    var daysInAMonth = 31;
+    var now = new Date(), numberOfMonths = 12, daysInAMonth = 31;
 
     $scope.years = function () {
         var i, years = [];
@@ -23,7 +20,7 @@ function DateClient ($scope) {
     $scope.months = function () {
         var i, months = [];
         for (i = 0; i < numberOfMonths; i += 1) {
-            months.push(i);
+            months.push({index:i, label:app.AD_MONTHS[i]});
         }
         return months;
     };
@@ -31,7 +28,7 @@ function DateClient ($scope) {
     $scope.bsMonths = function () {
         var i, months = [];
         for (i = 0; i < numberOfMonths; i += 1) {
-            months.push(i);
+            months.push({index:i, label:app.BS_MONTHS[i]});
         }
         return months;
     };

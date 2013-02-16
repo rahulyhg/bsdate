@@ -48,7 +48,7 @@ media="all"/>
 									<select id="adYear" name="adYear" class="input-small" 
 									ng-model="adYear" ng-options="y for y in years()">
 									</select> <select id="adMonth" name="adMonth" class="input-medium"
-									ng-model="adMonth" ng-options="m for m in months()">
+									ng-model="adMonth" ng-options="m.index as m.label for m in months()">
 									</select> <select id="adDate" name="adDate" class="input-mini"
 									ng-model="adDate" ng-options="d for d in dates()">
 									</select>
@@ -76,7 +76,7 @@ media="all"/>
 									ng-options="by for by in bsYears()">
 									</select> 
 									<select id="bsMonth" name="bsMonth" class="input-medium" ng-model="bsMonth"
-									ng-options="bm for bm in bsMonths()">
+									ng-options="bm.index as bm.label for bm in bsMonths()">
 									</select> 
 									<select id="bsDate" name="bsDate" class="input-mini"
 									ng-model="bsDate" ng-options="bd for bd in bsDates()">

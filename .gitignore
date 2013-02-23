@@ -17,3 +17,6 @@ bs-groovy/.settings
 build
 
 manifest.yml
+
+.idea
+/.idea/

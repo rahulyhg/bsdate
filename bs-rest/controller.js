@@ -12,7 +12,7 @@ var service = {
         if (isNaN(year) || isNaN(month) || isNaN(date)) {
             return output.error('Invalid date.');
         }
-        var dateValue = dateutil.convertToAd(year, month, date);
+        var dateValue = fn(year, month, date);
         return output.json({date:dateValue, value:dateValue.displayValue()});
     }
 };
